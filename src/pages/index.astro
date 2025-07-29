@@ -1,5 +1,6 @@
 ---
 import Navbar from '../components/Navbar.astro';
+import Carousel from '../components/Carousel.jsx';
 import "../styles/global.css";
 ---
 
@@ -7,11 +8,14 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <title>Fertilizantes - Landing</title>
+	<link rel="icon" href="/logo.ico" />
   </head>
-  <body class="bg-white">
+  <body class="bg-[var(--bg-primary)] text-[var(--color-text-primary)] transition-colors duration-500 relative">
     <Navbar />
 
-
+    <main class="pt-20"> {/* padding-top para no tapar contenido con navbar fixed */}
+      <Carousel client:load /> {/* React se carga en cliente */}
+    </main>
 
     <style>
       :global(body) {

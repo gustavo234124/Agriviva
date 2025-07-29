@@ -1,5 +1,13 @@
 :root {
-  --color-text-primary: #2E7D32;   /* Color texto Verde principal */
-  --color-secondary: #15803d; /* Verde oscuro */
-  --color-accent: #facc15;    /* Amarillo */
+  --color-text-primary: #2E7D32;
+  --color-secondary: #15803d;
+  --color-accent: #facc15;
+  --bg-primary: #ffffff;
+}
+
+.dark-mode {
+  --color-text-primary: #a5d6a7;
+  --color-secondary: #81c784;
+  --color-accent: #fff176;
+  --bg-primary: #121212;
 }

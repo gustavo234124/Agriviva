@@ -28,4 +28,4 @@ pnpm-debug.log*
 
 # Optional: npm package lock files (elige uno, pero usualmente conviene subirlos)
 # package-lock.json
-# yarn.lock integracion rama develop
+# yarn.lock 
