@@ -1,24 +1,31 @@
-# build output
+# Build output
 dist/
 
-# generated types
+# Generated files by Astro
 .astro/
 
-# dependencies
+# Node dependencies
 node_modules/
 
-# logs
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
+# Environment variables
 .env
-.env.production
+.env.*   # para no subir ningún archivo .env, por si tienes más variantes
 
-# macOS-specific files
+# macOS system files
 .DS_Store
 
-# jetbrains setting folder
+# JetBrains IDE settings
 .idea/
+
+# Optional: VSCode settings folder, si usas VSCode
+.vscode/
+
+# Optional: npm package lock files (elige uno, pero usualmente conviene subirlos)
+# package-lock.json
+# yarn.lock

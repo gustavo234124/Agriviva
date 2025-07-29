@@ -1,0 +1,38 @@
+---
+const navItems = [
+  { href: "/", label: "Inicio" },
+  { href: "/productos", label: "Productos" },
+  { href: "/servicios", label: "Servicios" },
+    { href: "/Nosotros", label: "Quienes somos" },
+  { href: "/contacto", label: "Contacto" },
+];
+---
+
+<nav class="glass-navbar w-full fixed top-0 left-0 rounded-br-4xl rounded-bl-4xl shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-0 py-4 flex items-center justify-between">
+    <a href="/" class=" text-[var(--color-text-primary)] text-4xl font-bold tracking-wide hover:text-[var(--color-accent)] transition-colors duration-300">
+      Agriviva
+    </a>
+    <ul class="flex space-x-12 text-[var(--color-text-primary)]  font-semibold text-2xl">
+      {navItems.map(({ href, label }) => (
+        <li>
+          <a href={href} class="hover:text-[var(--color-accent)] transition-colors duration-300">
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  :global(body) {
+    padding-top: 72px;
+  }
+   .glass-navbar {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+  }
+</style>
