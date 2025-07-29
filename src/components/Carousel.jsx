@@ -29,7 +29,7 @@ export default function Carousel() {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden rounded-lg">
+<div className="relative w-full overflow-hidden rounded-lg m-0 p-0">
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}

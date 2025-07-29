@@ -3,17 +3,19 @@ const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/productos", label: "Productos" },
   { href: "/servicios", label: "Servicios" },
-    { href: "/Nosotros", label: "Quienes somos" },
+  { href: "/Nosotros", label: "Quienes somos" },
   { href: "/contacto", label: "Contacto" },
 ];
 ---
 
-<nav class="glass-navbar w-full fixed top-0 left-0 rounded-br-4xl rounded-bl-4xl shadow-md z-50">
-  <div class="max-w-7xl mx-auto px-0 py-4 flex items-center justify-between">
-    <a href="/" class=" text-[var(--color-text-primary)] text-4xl font-bold tracking-wide hover:text-[var(--color-accent)] transition-colors duration-300">
+<nav class="glass-navbar w-full fixed top-0 left-0 rounded-br-4xl rounded-bl-4xl shadow-md z-50 bg-[rgba(255,255,255,0.3)] backdrop-blur-md border border-[rgba(209,213,219,0.3)]">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-[var(--color-text-primary)] text-4xl font-bold tracking-wide hover:text-[var(--color-accent)] transition-colors duration-300">
       Agriviva
     </a>
-    <ul class="flex space-x-12 text-[var(--color-text-primary)]  font-semibold text-2xl">
+
+    <!-- Menu desktop -->
+<ul class="hidden lg:flex space-x-12 text-[var(--color-text-primary)] font-semibold text-2xl">
       {navItems.map(({ href, label }) => (
         <li>
           <a href={href} class="hover:text-[var(--color-accent)] transition-colors duration-300">
@@ -22,14 +24,65 @@ const navItems = [
         </li>
       ))}
     </ul>
+
+    <!-- Botón hamburguesa para móvil -->
+    <button id="menu-toggle" class="lg:hidden text-[var(--color-text-primary)] focus:outline-none" aria-label="Toggle menu">
+      <svg id="icon-open" class="w-8 h-8 block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="icon-close" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
   </div>
 </nav>
+
+<!-- Menú lateral móvil -->
+<div id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-white bg-opacity-90 backdrop-blur-md shadow-lg z-40 transform -translate-x-full transition-transform duration-300">
+  <div class="mt-40 flex flex-col space-y-10 px-6 text-lg font-semibold text-[var(--color-text-primary)]">
+    {navItems.map(({ href, label }) => (
+      <a href={href} class="hover:text-[var(--color-accent)] transition-colors">
+        {label}
+      </a>
+    ))}
+  </div>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-30 z-30 hidden"></div>
+
+<script is:inline>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('overlay');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  function toggleMenu() {
+    const isOpen = mobileMenu.classList.contains('-translate-x-full') === false;
+
+    if (isOpen) {
+      mobileMenu.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    } else {
+      mobileMenu.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    }
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', toggleMenu);
+</script>
 
 <style>
   :global(body) {
     padding-top: 72px;
   }
-   .glass-navbar {
+  .glass-navbar {
     background: rgba(255, 255, 255, 0.3);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
