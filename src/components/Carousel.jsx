@@ -14,7 +14,7 @@ const ArrowSVG = ({ rotate = 0, size = 29 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
-    height={(size * 52) / 29}
+    height={(size * 52) / 29} // manteniendo proporción 29x52
     viewBox="0 0 29 52"
     fill="none"
     style={{ transform: `rotate(${rotate}deg)` }}
@@ -29,27 +29,32 @@ const ArrowSVG = ({ rotate = 0, size = 29 }) => (
 );
 
 export default function Carousel() {
+  // Duplicamos imágenes para loop infinito suave
   const extendedImages = [...images, ...images];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
 
+  // Estado tamaño svg responsivo
   const [svgSize, setSvgSize] = useState(29);
 
-  // Estados para saber si el botón está activo (para mostrar fondo blanco)
+  // Estados para controlar fondo blanco al click (solo móvil)
   const [prevActive, setPrevActive] = useState(false);
   const [nextActive, setNextActive] = useState(false);
 
+  // Avanza slide
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1);
     setIsTransitioning(true);
   };
 
+  // Retrocede slide
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => prevIndex - 1);
     setIsTransitioning(true);
   };
 
+  // Cuando termina transición para loop suave
   const handleTransitionEnd = () => {
     if (currentIndex >= images.length) {
       setIsTransitioning(false);
@@ -60,20 +65,21 @@ export default function Carousel() {
     }
   };
 
+  // Auto slide cada 3 seg
   useEffect(() => {
     const interval = setInterval(nextSlide, 3000);
     return () => clearInterval(interval);
   }, []);
 
+  // Reactivar transición después de salto invisible
   useEffect(() => {
     if (!isTransitioning) {
-      const timeout = setTimeout(() => {
-        setIsTransitioning(true);
-      }, 50);
+      const timeout = setTimeout(() => setIsTransitioning(true), 50);
       return () => clearTimeout(timeout);
     }
   }, [isTransitioning]);
 
+  // Ajusta tamaño svg al tamaño de pantalla
   useEffect(() => {
     function updateSize() {
       setSvgSize(window.innerWidth < 640 ? 18 : 29);
@@ -83,11 +89,11 @@ export default function Carousel() {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  // Función para activar fondo blanco en móviles por 1.5 segundos
+  // Manejadores click que activan fondo blanco en móviles por 500ms
   const handleClickPrev = () => {
     if (window.innerWidth < 640) {
       setPrevActive(true);
-      setTimeout(() => setPrevActive(false),500);
+      setTimeout(() => setPrevActive(false), 500);
     }
     prevSlide();
   };
@@ -123,10 +129,12 @@ export default function Carousel() {
       {/* Botón atrás */}
       <button
         onClick={handleClickPrev}
-        className={`absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded transition
+        aria-label="Previous slide"
+        className={`
+          absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded transition
+          lg:hover:bg-white
           ${prevActive ? "bg-white" : ""}
         `}
-        aria-label="Previous slide"
       >
         <ArrowSVG rotate={180} size={svgSize} />
       </button>
@@ -134,10 +142,12 @@ export default function Carousel() {
       {/* Botón siguiente */}
       <button
         onClick={handleClickNext}
-        className={`absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded transition
+        aria-label="Next slide"
+        className={`
+          absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded transition
+          lg:hover:bg-white
           ${nextActive ? "bg-white" : ""}
         `}
-        aria-label="Next slide"
       >
         <ArrowSVG size={svgSize} />
       </button>

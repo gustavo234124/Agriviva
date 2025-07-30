@@ -1,6 +1,7 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Carousel from '../components/Carousel.jsx';
+import CardsMisionVisionPolicies from '../components/MissionVisionPolicies.astro';
 import "../styles/global.css";
 ---
 
@@ -16,6 +17,8 @@ import "../styles/global.css";
 
     <main class="pt-20"> {/* padding-top para no tapar contenido con navbar fixed */}
       <Carousel client:load /> {/* React se carga en cliente */}
+	        <CardsMisionVisionPolicies /> {/* Aquí se insertan las cards */}
+
     </main>
 
     <style>
