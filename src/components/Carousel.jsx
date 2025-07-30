@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
 const images = [
-  '/public/images/CarouselItemUno.jpeg',
-  '/public/images/CarouselItemDos.jpeg',
-  '/public/images/CarouselItemTres.jpeg',
-  '/public/images/CarouselItemCutro.jpeg',
-  '/public/images/CarouselItemCinco.jpeg',
-  '/public/images/CarouselItemSeis.jpeg',
+  "/public/images/CarouselItemUno.jpeg",
+  "/public/images/CarouselItemDos.jpeg",
+  "/public/images/CarouselItemTres.jpeg",
+  "/public/images/CarouselItemCutro.jpeg",
+  "/public/images/CarouselItemCinco.jpeg",
+  "/public/images/CarouselItemSeis.jpeg",
 ];
 
 // SVG como componente para poder reutilizarlo y rotarlo
-const ArrowSVG = ({ rotate = 0 }) => (
+const ArrowSVG = ({ rotate = 0, size = 29 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="29"
-    height="52"
+    width={size}
+    height={(size * 52) / 29}
     viewBox="0 0 29 52"
     fill="none"
     style={{ transform: `rotate(${rotate}deg)` }}
@@ -29,14 +29,35 @@ const ArrowSVG = ({ rotate = 0 }) => (
 );
 
 export default function Carousel() {
+  const extendedImages = [...images, ...images];
+
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  const [svgSize, setSvgSize] = useState(29);
+
+  // Estados para saber si el botón está activo (para mostrar fondo blanco)
+  const [prevActive, setPrevActive] = useState(false);
+  const [nextActive, setNextActive] = useState(false);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => prevIndex + 1);
+    setIsTransitioning(true);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentIndex((prevIndex) => prevIndex - 1);
+    setIsTransitioning(true);
+  };
+
+  const handleTransitionEnd = () => {
+    if (currentIndex >= images.length) {
+      setIsTransitioning(false);
+      setCurrentIndex(0);
+    } else if (currentIndex < 0) {
+      setIsTransitioning(false);
+      setCurrentIndex(images.length - 1);
+    }
   };
 
   useEffect(() => {
@@ -44,13 +65,52 @@ export default function Carousel() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (!isTransitioning) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(true);
+      }, 50);
+      return () => clearTimeout(timeout);
+    }
+  }, [isTransitioning]);
+
+  useEffect(() => {
+    function updateSize() {
+      setSvgSize(window.innerWidth < 640 ? 18 : 29);
+    }
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+  // Función para activar fondo blanco en móviles por 1.5 segundos
+  const handleClickPrev = () => {
+    if (window.innerWidth < 640) {
+      setPrevActive(true);
+      setTimeout(() => setPrevActive(false),500);
+    }
+    prevSlide();
+  };
+
+  const handleClickNext = () => {
+    if (window.innerWidth < 640) {
+      setNextActive(true);
+      setTimeout(() => setNextActive(false), 500);
+    }
+    nextSlide();
+  };
+
   return (
     <div className="relative w-full overflow-hidden rounded-lg m-0 p-0">
       <div
         className="flex transition-transform duration-500"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+          transitionProperty: isTransitioning ? "transform" : "none",
+        }}
+        onTransitionEnd={handleTransitionEnd}
       >
-        {images.map((src, idx) => (
+        {extendedImages.map((src, idx) => (
           <img
             key={idx}
             src={src}
@@ -60,23 +120,27 @@ export default function Carousel() {
         ))}
       </div>
 
-      {/* Botón atrás con SVG rotado 180° */}
-<button
-  onClick={prevSlide}
-  className="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded hover:bg-white transition"
-  aria-label="Previous slide"
->
-  <ArrowSVG rotate={180} />
-</button>
+      {/* Botón atrás */}
+      <button
+        onClick={handleClickPrev}
+        className={`absolute top-1/2 left-2 transform -translate-y-1/2 p-2 rounded transition
+          ${prevActive ? "bg-white" : ""}
+        `}
+        aria-label="Previous slide"
+      >
+        <ArrowSVG rotate={180} size={svgSize} />
+      </button>
 
-<button
-  onClick={nextSlide}
-  className="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded hover:bg-white transition"
-  aria-label="Next slide"
->
-  <ArrowSVG />
-</button>
-
+      {/* Botón siguiente */}
+      <button
+        onClick={handleClickNext}
+        className={`absolute top-1/2 right-2 transform -translate-y-1/2 p-2 rounded transition
+          ${nextActive ? "bg-white" : ""}
+        `}
+        aria-label="Next slide"
+      >
+        <ArrowSVG size={svgSize} />
+      </button>
     </div>
   );
 }
