@@ -6,20 +6,20 @@ export default function ProductCards() {
 
   // Datos de ejemplo para cada card
 const cards = [
-  { id: 1, title: "Producto 1", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#5eb853" },
-  { id: 2, title: "Producto 2", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#8c5b30" },
-  { id: 3, title: "Producto 3", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#74c272" },
-  { id: 4, title: "Producto 4", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#ed4a26" },
-  { id: 5, title: "Producto 5", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#d72023" },
-  { id: 6, title: "Producto 6", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#2a76b6" },
-  { id: 7, title: "Producto 7", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#abadae" },
-  { id: 8, title: "Producto 8", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#f0569b" },
-  { id: 9, title: "Producto 9", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#fece38" },
-  { id: 10, title: "Producto 10", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#75c9ba" },
-  { id: 11, title: "Producto 11", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#888857" },
-  { id: 12, title: "Producto 12", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#533318" },
-  { id: 13, title: "Producto 13", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#734fa0" },
-  { id: 14, title: "Producto 14", text: "Nombre del producto", price: "$50", modalContent: "...", headerColor: "#fcb731" },
+  { id: 1, title: "Alfa-Desarrollo", text: "Alfa-Desarrollo", price: "$50", modalContent: "...", headerColor: "#5eb853" },
+  { id: 2, title: "Brote-Fuerte", text: "Brote-Fuerte", price: "$50", modalContent: "...", headerColor: "#8c5b30" },
+  { id: 3, title: "Verde-Forte", text: "Verde-Forte", price: "$50", modalContent: "...", headerColor: "#74c272" },
+  { id: 4, title: "Optimus-Vital", text: "Optimus-Vital", price: "$50", modalContent: "...", headerColor: "#ed4a26" },
+  { id: 5, title: "Presto-Plus", text: "Presto-Plus", price: "$50", modalContent: "...", headerColor: "#d72023" },
+  { id: 6, title: "Brokel-K", text: "Brokel-K", price: "$50", modalContent: "...", headerColor: "#2a76b6" },
+  { id: 7, title: "FORTASIL", text: "FORTASIL", price: "$50", modalContent: "...", headerColor: "#abadae" },
+  { id: 8, title: "Impulso-Floral", text: "Impulso-Floral", price: "$50", modalContent: "...", headerColor: "#f0569b" },
+  { id: 9, title: "Calibre-Máximo", text: "Calibre-Máximo", price: "$50", modalContent: "...", headerColor: "#fece38" },
+  { id: 10, title: "Llenado-Brix", text: "Llenado-Brix", price: "$50", modalContent: "...", headerColor: "#75c9ba" },
+  { id: 11, title: "Meta-Ideal", text: "Meta-Ideal", price: "$50", modalContent: "...", headerColor: "#888857" },
+  { id: 12, title: "BOOSTER ROOT", text: "BOOSTER ROOT", price: "$50", modalContent: "...", headerColor: "#533318" },
+  { id: 13, title: "Control-BF", text: "Control-BF", price: "$50", modalContent: "...", headerColor: "#734fa0" },
+  { id: 14, title: "AERO-POLEN", text: "AERO-POLEN", price: "$50", modalContent: "...", headerColor: "#fcb731" },
 ];
 
 
@@ -77,12 +77,12 @@ const cards = [
           onClick={() => setOpenModal(null)}
         >
           <div
-            className="bg-white rounded-lg max-w-lg mx-4 relative shadow-lg w-full"
+            className="bg-white rounded-4xl max-w-3xl mx-4 relative shadow-lg w-full h-[600px]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header dinámico */}
             <div
-              className="flex justify-between items-center p-4 rounded-t-lg"
+              className="flex justify-between items-center p-4 rounded-tl-4xl rounded-tr-4xl"
               style={{ backgroundColor: cards.find(c => c.id === openModal).headerColor }}
             >
               <h2 className="text-white font-bold text-lg">
@@ -94,22 +94,11 @@ const cards = [
                   aria-label="Descargar ficha técnica"
                   onClick={() => alert("Descargar ficha técnica")}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4v16m0 0l-4-4m4 4l4-4"
-                    />
-                  </svg>
+                 <svg xmlns="http://www.w3.org/2000/svg" width="34" height="48" viewBox="0 0 54 68" fill="none">
+  <path d="M33.75 0.255676L54 20.4174V60.741C54 62.5234 53.2888 64.2328 52.023 65.4931C50.7571 66.7535 49.0402 67.4616 47.25 67.4616H6.75C4.95979 67.4616 3.2429 66.7535 1.97703 65.4931C0.711158 64.2328 0 62.5234 0 60.741V6.97626C0 5.19385 0.711158 3.48445 1.97703 2.22409C3.2429 0.963736 4.95979 0.255676 6.75 0.255676H33.75ZM47.25 60.741V23.7777H30.375V6.97626H6.75V60.741H47.25ZM27 57.3807L13.5 43.9395H21.9375V33.8586H32.0625V43.9395H40.5L27 57.3807Z" fill="white"/>
+</svg>
                 </button>
-                <span className="text-white font-semibold">Ficha Técnica</span>
+                <span className="text-white font-semibold text-3xl">Ficha Técnica</span>
                 <button
                   className="text-white text-xl font-bold"
                   onClick={() => setOpenModal(null)}
