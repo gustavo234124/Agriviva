@@ -31,7 +31,7 @@ const cards = [
   {cards.map(({ id, text,price }) => (
     <div
       key={id}
-      className="mx-auto flex max-w-md flex-col gap-y-4 items-center bg-gray-300 border-2 border-black rounded-4xl p-6 h-165"
+      className="mx-auto flex max-w-md flex-col gap-y-4 items-center bg-[var(--color-cards-products)] border-2 border-[var(--border-cards-products)] rounded-4xl p-6 h-165"
     >
       {/* Imagen del producto */}
       <img
@@ -46,9 +46,9 @@ const cards = [
 </p>
 
       {/* Texto */}
-      <p>{text}</p>
+<p className="text-3xl text-[var(--color-text-primary)]">{text}</p>
 
-  <span className="text-lg text-gray-700">{price}</span> {/* Aquí el precio */}
+  <span className="text-3xl text-gray-700">{price}</span> {/* Aquí el precio */}
 
 
       {/* Botón */}
