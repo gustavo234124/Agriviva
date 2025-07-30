@@ -6,21 +6,93 @@ export default function ProductCards() {
 
   // Datos para card
 const cards = [
-  { id: 1, title: "Alfa-Desarrollo", text: "Alfa-Desarrollo", price: "$50", modalContent: "...", headerColor: "#5eb853",pdfFileName:"alfa-desarrollo.pdf",imageFileName:"/images/producto.png"},
-  { id: 2, title: "Brote-Fuerte", text: "Brote-Fuerte", price: "$50", modalContent: "...", headerColor: "#8c5b30",pdfFileName:"brote-fuerte.pdf",imageFileName:"/images/producto.png"},
-  { id: 3, title: "Verde-Forte", text: "Verde-Forte", price: "$50", modalContent: "...", headerColor: "#74c272",pdfFileName:"verde-forte.pdf",imageFileName:"/images/producto.png"},
-  { id: 4, title: "Optimus-Vital", text: "Optimus-Vital", price: "$50", modalContent: "...", headerColor: "#ed4a26",pdfFileName:"optimus-vital",imageFileName:"/images/producto.png"},
-  { id: 5, title: "Presto-Plus", text: "Presto-Plus", price: "$50", modalContent: "...", headerColor: "#d72023",pdfFileName:"presto-plus",imageFileName:"/images/producto.png"},
-  { id: 6, title: "Brokel-K", text: "Brokel-K", price: "$50", modalContent: "...", headerColor: "#2a76b6",pdfFileName:"brokel-k.pdf",imageFileName:"/images/producto.png"},
-  { id: 7, title: "FORTASIL", text: "FORTASIL", price: "$50", modalContent: "...", headerColor: "#abadae",pdfFileName:"fortasil.pdf",imageFileName:"/images/producto.png"},
-  { id: 8, title: "Impulso-Floral", text: "Impulso-Floral", price: "$50", modalContent: "...", headerColor: "#f0569b",pdfFileName:"impulso-floral.pdf",imageFileName:"/images/producto.png"},
-  { id: 9, title: "Calibre-Máximo", text: "Calibre-Máximo", price: "$50", modalContent: "...", headerColor: "#fece38",pdfFileName:"calibre-maximo.pdf",imageFileName:"/images/producto.png"},
-  { id: 10, title: "Llenado-Brix", text: "Llenado-Brix", price: "$50", modalContent: "...", headerColor: "#75c9ba",pdfFileName:"llenado-brix.pdf",imageFileName:"/images/producto.png"},
-  { id: 11, title: "Meta-Ideal", text: "Meta-Ideal", price: "$50", modalContent: "...", headerColor: "#888857",pdfFileName:"meta-ideal.pdf",imageFileName:"/images/producto.png"},
-  { id: 12, title: "BOOSTER-ROOT", text: "BOOSTER-ROOT", price: "$50", modalContent: "...", headerColor: "#533318",pdfFileName:"booster-root.pdf",imageFileName:"/images/producto.png"},
-  { id: 13, title: "Control-BF", text: "Control-BF", price: "$50", modalContent: "...", headerColor: "#734fa0",pdfFileName:"control-bf.pdf",imageFileName:"/images/producto.png"},
-  { id: 14, title: "AERO-POLEN", text: "AERO-POLEN", price: "$50", modalContent: "...", headerColor: "#fcb731",pdfFileName:"aero-polen.pdf",imageFileName:"/images/producto.png"},
+  { id: 1, title: "Alfa-Desarrollo", text: "Alfa-Desarrollo",  prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#5eb853",pdfFileName:"alfa-desarrollo.pdf",imageFileName:"/images/producto.png"},
+  { id: 2, title: "Brote-Fuerte", text: "Brote-Fuerte", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#8c5b30",pdfFileName:"brote-fuerte.pdf",imageFileName:"/images/producto.png"},
+  { id: 3, title: "Verde-Forte", text: "Verde-Forte", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#74c272",pdfFileName:"verde-forte.pdf",imageFileName:"/images/producto.png"},
+  { id: 4, title: "Optimus-Vital", text: "Optimus-Vital", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#ed4a26",pdfFileName:"optimus-vital",imageFileName:"/images/producto.png"},
+  { id: 5, title: "Presto-Plus", text: "Presto-Plus", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#d72023",pdfFileName:"presto-plus",imageFileName:"/images/producto.png"},
+  { id: 6, title: "Brokel-K", text: "Brokel-K", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#2a76b6",pdfFileName:"brokel-k.pdf",imageFileName:"/images/producto.png"},
+  { id: 7, title: "FORTASIL", text: "FORTASIL", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#abadae",pdfFileName:"fortasil.pdf",imageFileName:"/images/producto.png"},
+  { id: 8, title: "Impulso-Floral", text: "Impulso-Floral",  prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#f0569b",pdfFileName:"impulso-floral.pdf",imageFileName:"/images/producto.png"},
+  { id: 9, title: "Calibre-Máximo", text: "Calibre-Máximo", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#fece38",pdfFileName:"calibre-maximo.pdf",imageFileName:"/images/producto.png"},
+  { id: 10, title: "Llenado-Brix", text: "Llenado-Brix", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#75c9ba",pdfFileName:"llenado-brix.pdf",imageFileName:"/images/producto.png"},
+  { id: 11, title: "Meta-Ideal", text: "Meta-Ideal", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#888857",pdfFileName:"meta-ideal.pdf",imageFileName:"/images/producto.png"},
+  { id: 12, title: "BOOSTER-ROOT", text: "BOOSTER-ROOT", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#533318",pdfFileName:"booster-root.pdf",imageFileName:"/images/producto.png"},
+  { id: 13, title: "Control-BF", text: "Control-BF", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#734fa0",pdfFileName:"control-bf.pdf",imageFileName:"/images/producto.png"},
+  { id: 14, title: "AERO-POLEN", text: "AERO-POLEN", prices: {
+      "1L": 50,
+      "5L": 150,
+      "10L": 300,
+      "20L": 600
+    }, modalContent: "...", headerColor: "#fcb731",pdfFileName:"aero-polen.pdf",imageFileName:"/images/producto.png"},
 ];
+
+const [selectedLiters, setSelectedLiters] = useState("1L");
 
 
   return (
@@ -61,12 +133,16 @@ const cards = [
   <span className="text-3xl text-[var(--color-text-blue-primary)]">{price}</span>
 
   {/* Botón */}
-  <button
-    onClick={() => setOpenModal(id)}
-    className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition"
-  >
-    Ver más
-  </button>
+<button
+  onClick={() => {
+    setOpenModal(id);
+    setSelectedLiters("1L"); // Reinicia el litro seleccionado al abrir modal
+  }}
+  className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition"
+>
+  Ver más
+</button>
+
 </div>
 
   ))}
@@ -137,10 +213,47 @@ const cards = [
 </div>
 
 
-            {/* Contenido del modal */}
-            <div className="p-8">
-              <p>{cards.find((card) => card.id === openModal)?.modalContent}</p>
-            </div>
+{/* Contenido del modal */}
+<div className="p-8 flex gap-8">
+  {/* Imagen */}
+  <img
+    src={cards.find((card) => card.id === openModal)?.imageFileName}
+    alt={`Imagen de ${cards.find((card) => card.id === openModal)?.title}`}
+    className="w-64 h-110 object-contain"
+  />
+
+  {/* Detalles */}
+  <div className="flex flex-col">
+    {/* Título */}
+    <p className="text-xl font-semibold text-gray-800 mb-4">Presentación</p>
+
+    {/* Botones de litros */}
+    <div className="flex gap-4 mb-6">
+      {["1L", "5L", "10L", "20L"].map((litro) => (
+        <button
+          key={litro}
+          onClick={() => setSelectedLiters(litro)}
+          className={`px-3 py-1 border rounded-lg transition 
+            ${selectedLiters === litro ? "bg-green-600 text-white" : "text-gray-700"}`}
+        >
+          {litro}
+        </button>
+      ))}
+    </div>
+
+    {/* Precio dinámico */}
+    <div>
+      <p className="text-lg text-gray-600">Precio</p>
+      <p className="text-3xl font-bold text-green-600">
+        ${cards.find((card) => card.id === openModal)?.prices[selectedLiters]}
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
           </div>
         </div>
       )}
