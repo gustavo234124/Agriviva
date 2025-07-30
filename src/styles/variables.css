@@ -4,6 +4,7 @@
   --color-text-blackandWhite:#000000;
   --color-cards-products:#D1D5DB;
   --border-cards-products:#6e6f70;
+  --color-text-blue-primary:#0160AA; 
 }
 
 .dark {
@@ -12,5 +13,6 @@
   --color-text-blackandWhite:#ffffff;
   --color-cards-products:#626161;
   --border-cards-products:#dadadb;
+  --color-text-blue-primary:#4da0df; 
 
 }

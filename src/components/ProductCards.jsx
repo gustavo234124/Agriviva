@@ -6,20 +6,20 @@ export default function ProductCards() {
 
   // Datos para card
 const cards = [
-  { id: 1, title: "Alfa-Desarrollo", text: "Alfa-Desarrollo", price: "$50", modalContent: "...", headerColor: "#5eb853",pdfFileName:"alfa-desarrollo.pdf"},
-  { id: 2, title: "Brote-Fuerte", text: "Brote-Fuerte", price: "$50", modalContent: "...", headerColor: "#8c5b30",pdfFileName:"brote-fuerte.pdf"},
-  { id: 3, title: "Verde-Forte", text: "Verde-Forte", price: "$50", modalContent: "...", headerColor: "#74c272",pdfFileName:"verde-forte.pdf"},
-  { id: 4, title: "Optimus-Vital", text: "Optimus-Vital", price: "$50", modalContent: "...", headerColor: "#ed4a26",pdfFileName:"optimus-vital"},
-  { id: 5, title: "Presto-Plus", text: "Presto-Plus", price: "$50", modalContent: "...", headerColor: "#d72023",pdfFileName:"presto-plus"},
-  { id: 6, title: "Brokel-K", text: "Brokel-K", price: "$50", modalContent: "...", headerColor: "#2a76b6",pdfFileName:"brokel-k.pdf"},
-  { id: 7, title: "FORTASIL", text: "FORTASIL", price: "$50", modalContent: "...", headerColor: "#abadae",pdfFileName:"fortasil.pdf"},
-  { id: 8, title: "Impulso-Floral", text: "Impulso-Floral", price: "$50", modalContent: "...", headerColor: "#f0569b",pdfFileName:"impulso-floral.pdf"},
-  { id: 9, title: "Calibre-Máximo", text: "Calibre-Máximo", price: "$50", modalContent: "...", headerColor: "#fece38",pdfFileName:"calibre-maximo.pdf"},
-  { id: 10, title: "Llenado-Brix", text: "Llenado-Brix", price: "$50", modalContent: "...", headerColor: "#75c9ba",pdfFileName:"llenado-brix.pdf"},
-  { id: 11, title: "Meta-Ideal", text: "Meta-Ideal", price: "$50", modalContent: "...", headerColor: "#888857",pdfFileName:"meta-ideal.pdf"},
-  { id: 12, title: "BOOSTER-ROOT", text: "BOOSTER-ROOT", price: "$50", modalContent: "...", headerColor: "#533318",pdfFileName:"booster-root.pdf"},
-  { id: 13, title: "Control-BF", text: "Control-BF", price: "$50", modalContent: "...", headerColor: "#734fa0",pdfFileName:"control-bf.pdf"},
-  { id: 14, title: "AERO-POLEN", text: "AERO-POLEN", price: "$50", modalContent: "...", headerColor: "#fcb731",pdfFileName:"aero-polen.pdf"},
+  { id: 1, title: "Alfa-Desarrollo", text: "Alfa-Desarrollo", price: "$50", modalContent: "...", headerColor: "#5eb853",pdfFileName:"alfa-desarrollo.pdf",imageFileName:"/images/producto.png"},
+  { id: 2, title: "Brote-Fuerte", text: "Brote-Fuerte", price: "$50", modalContent: "...", headerColor: "#8c5b30",pdfFileName:"brote-fuerte.pdf",imageFileName:"/images/producto.png"},
+  { id: 3, title: "Verde-Forte", text: "Verde-Forte", price: "$50", modalContent: "...", headerColor: "#74c272",pdfFileName:"verde-forte.pdf",imageFileName:"/images/producto.png"},
+  { id: 4, title: "Optimus-Vital", text: "Optimus-Vital", price: "$50", modalContent: "...", headerColor: "#ed4a26",pdfFileName:"optimus-vital",imageFileName:"/images/producto.png"},
+  { id: 5, title: "Presto-Plus", text: "Presto-Plus", price: "$50", modalContent: "...", headerColor: "#d72023",pdfFileName:"presto-plus",imageFileName:"/images/producto.png"},
+  { id: 6, title: "Brokel-K", text: "Brokel-K", price: "$50", modalContent: "...", headerColor: "#2a76b6",pdfFileName:"brokel-k.pdf",imageFileName:"/images/producto.png"},
+  { id: 7, title: "FORTASIL", text: "FORTASIL", price: "$50", modalContent: "...", headerColor: "#abadae",pdfFileName:"fortasil.pdf",imageFileName:"/images/producto.png"},
+  { id: 8, title: "Impulso-Floral", text: "Impulso-Floral", price: "$50", modalContent: "...", headerColor: "#f0569b",pdfFileName:"impulso-floral.pdf",imageFileName:"/images/producto.png"},
+  { id: 9, title: "Calibre-Máximo", text: "Calibre-Máximo", price: "$50", modalContent: "...", headerColor: "#fece38",pdfFileName:"calibre-maximo.pdf",imageFileName:"/images/producto.png"},
+  { id: 10, title: "Llenado-Brix", text: "Llenado-Brix", price: "$50", modalContent: "...", headerColor: "#75c9ba",pdfFileName:"llenado-brix.pdf",imageFileName:"/images/producto.png"},
+  { id: 11, title: "Meta-Ideal", text: "Meta-Ideal", price: "$50", modalContent: "...", headerColor: "#888857",pdfFileName:"meta-ideal.pdf",imageFileName:"/images/producto.png"},
+  { id: 12, title: "BOOSTER-ROOT", text: "BOOSTER-ROOT", price: "$50", modalContent: "...", headerColor: "#533318",pdfFileName:"booster-root.pdf",imageFileName:"/images/producto.png"},
+  { id: 13, title: "Control-BF", text: "Control-BF", price: "$50", modalContent: "...", headerColor: "#734fa0",pdfFileName:"control-bf.pdf",imageFileName:"/images/producto.png"},
+  { id: 14, title: "AERO-POLEN", text: "AERO-POLEN", price: "$50", modalContent: "...", headerColor: "#fcb731",pdfFileName:"aero-polen.pdf",imageFileName:"/images/producto.png"},
 ];
 
 
@@ -28,37 +28,47 @@ const cards = [
       <div className="bg-[var(--color-bg-body)] py-24 sm:py-32">
         <div className="mx-auto max-w-15xl px-6 lg:px-8">
 <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-  {cards.map(({ id, text,price }) => (
-    <div
-      key={id}
-      className="mx-auto flex max-w-md flex-col gap-y-4 items-center bg-[var(--color-cards-products)] border-2 border-[var(--border-cards-products)] rounded-4xl p-6 h-165"
-    >
-      {/* Imagen del producto */}
-      <img
-        src="/images/producto.png"
-        alt="Imagen del producto"
-        className="w-80 h-100 object-contain mb-2"
-      />
-
-        {/* No quitar esya p de abajo por que es un trucazo para que no se desborden ni se deformen las cards de los productos jsjsjsjs */}
-<p className="invisible"> 
-  Lorem ipsum dolor sit amet, consectetur adipisicing
-</p>
-
-      {/* Texto */}
-<p className="text-3xl text-[var(--color-text-primary)]">{text}</p>
-
-  <span className="text-3xl text-gray-700">{price}</span> {/* Aquí el precio */}
+  {cards.map(({ id, text,price, imageFileName}) => (
+   <div
+  key={id}
+  className="
+    mx-auto
+    flex max-w-md flex-col items-center
+    bg-[var(--color-cards-products)]
+    border-2 border-[var(--border-cards-products)]
+    rounded-4xl p-6
+    gap-y-2 sm:gap-y-3 md:gap-y-4
+    min-h-[auto] md:min-h-[165px]
+  "
+>
+  {/* Imagen */}
+<img
+  src={imageFileName}
+  alt={`Imagen de ${text}`}
+  className="w-80 h-100 object-contain mb-2"
+/>
 
 
-      {/* Botón */}
-      <button
-        onClick={() => setOpenModal(id)}
-        className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition"
-      >
-        Ver más
-      </button>
-    </div>
+  {/* Truco para evitar desborde */}
+  <p className="invisible">
+    Lorem ipsum dolor sit amet, consectetur adipisicing
+  </p>
+
+  {/* Texto */}
+  <p className="text-3xl text-[var(--color-text-primary)]">{text}</p>
+
+  {/* Precio */}
+  <span className="text-3xl text-[var(--color-text-blue-primary)]">{price}</span>
+
+  {/* Botón */}
+  <button
+    onClick={() => setOpenModal(id)}
+    className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition"
+  >
+    Ver más
+  </button>
+</div>
+
   ))}
 </dl>
 
