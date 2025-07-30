@@ -52,12 +52,17 @@ export default function ProductCards() {
       {/* Modal */}
       {openModal !== null && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-          onClick={() => setOpenModal(null)} // Cerrar modal al click afuera
+          className="fixed inset-0 flex items-center justify-center z-50"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.3)", // semitransparente
+            backdropFilter: "blur(8px)",          // efecto vidrio esmerilado
+            WebkitBackdropFilter: "blur(8px)",    // para Safari
+          }}
+          onClick={() => setOpenModal(null)}
         >
           <div
-            className="bg-white rounded-lg p-8 max-w-lg mx-4 relative"
-            onClick={(e) => e.stopPropagation()} // Evita cerrar modal al hacer click dentro
+            className="bg-white rounded-lg p-8 max-w-lg mx-4 relative shadow-lg"
+            onClick={(e) => e.stopPropagation()} // evita cerrar modal al click dentro
           >
             <button
               className="absolute top-2 right-2 text-gray-700 hover:text-black text-xl font-bold"
