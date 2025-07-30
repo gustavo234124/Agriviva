@@ -1,15 +1,13 @@
 :root {
   --color-bg-body:#ffff;
   --color-text-primary: #2E7D32;
-  --color-secondary: #15803d;
-  --color-text-hover-navbar: #025fab;
-  --bg-primary: #ffffff;
+  --color-text-blackandWhite:#000000;
+
 }
 
 .dark {
   --color-bg-body:#313030;
   --color-text-primary: #a5d6a7;
-  --color-secondary: #81c784;
-  --color-text-hover-navbar: #025fab;
-  --bg-primary: #121212;
+  --color-text-blackandWhite:#ffffff;
+
 }

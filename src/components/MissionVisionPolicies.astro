@@ -1,49 +1,88 @@
 ---
-// Componente Cards.astro (puedes ponerle el nombre que quieras)
-
 ---
 
-<div class="bg-white py-24 sm:py-32">
-    <div class="mx-auto max-w-15xl px-6 lg:px-8">
-        <dl
-            class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+<div class="bg-[var(--color-bg-body)] py-24 sm:py-32">
+  <div class="mx-auto max-w-15xl px-6 lg:px-8">
+    <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4 items-center">
+        {/* Círculo verde con SVG */}
+        <div class="bg-green-600 rounded-full w-40 h-40 flex items-center justify-center mb-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.227 9.313a3 3 0 015.546-1.16c.067.254.1.52.1.788a1 1 0 01-2 0c0-.048-.006-.095-.02-.14a1 1 0 00-1.801-.468 1 1 0 00-.006 1.3c.176.213.393.4.64.55a2.002 2.002 0 011.132 1.77v.5a1 1 0 11-2 0v-.5a1.998 1.998 0 00-1.318-1.896 1 1 0 01-.271-1.29zM12 17h.01"
+            />
+          </svg>
+        </div>
 
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                
-                <dt class="text-base/7 text-gray-600">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Temporibus, modi in! Vel officia eius consequatur quasi!
-                    Sequi laudantium possimus ea cum maiores eos autem rerum
-                    unde? Id cumque corrupti nihil!
-                </dt>
-                
-                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                    Mision
-                </dd>
-                
-            </div>
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                <dt class="text-base/7 text-gray-600">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                    facilis quae impedit est similique facere quasi nulla
-                    deserunt porro error architecto natus fugit, eos perferendis
-                    sint maiores alias nihil eveniet.
-                </dt>
-                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                    Vision
-                </dd>
-            </div>
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-                <dt class="text-base/7 text-gray-600">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Possimus accusamus, optio harum est inventore, quam quod et
-                    excepturi odit tenetur consequatur sunt. Deserunt, dicta
-                    quis sapiente optio tenetur minima accusantium.
-                </dt>
-                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                    Politicas
-                </dd>
-            </div>
-        </dl>
-    </div>
+        {/* Título */}
+        <dd class="text-3xl font-semibold tracking-tight text-[var(--color-text-primary)] sm:text-5xl">
+          Misión
+        </dd>
+
+        {/* Texto */}
+        <dt class="text-base/7  text-[var(--color-text-blackandWhite)] px-4">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, modi in! Vel officia eius consequatur quasi! Sequi laudantium possimus ea cum maiores eos autem rerum unde? Id cumque corrupti nihil!
+        </dt>
+      </div>
+
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4 items-center">
+        <div class="bg-green-600 rounded-full w-40 h-40 flex items-center justify-center mb-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.227 9.313a3 3 0 015.546-1.16c.067.254.1.52.1.788a1 1 0 01-2 0c0-.048-.006-.095-.02-.14a1 1 0 00-1.801-.468 1 1 0 00-.006 1.3c.176.213.393.4.64.55a2.002 2.002 0 011.132 1.77v.5a1 1 0 11-2 0v-.5a1.998 1.998 0 00-1.318-1.896 1 1 0 01-.271-1.29zM12 17h.01"
+            />
+          </svg>
+        </div>
+        <dd class="text-3xl font-semibold tracking-tight text-[var(--color-text-primary)] sm:text-5xl">
+          Visión
+        </dd>
+        <dt class="text-base/7 text-[var(--color-text-blackandWhite)] px-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facilis quae impedit est similique facere quasi nulla deserunt porro error architecto natus fugit, eos perferendis sint maiores alias nihil eveniet.
+        </dt>
+      </div>
+
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4 items-center">
+        <div class="bg-green-600 rounded-full w-40 h-40 flex items-center justify-center mb-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-8 h-8 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.227 9.313a3 3 0 015.546-1.16c.067.254.1.52.1.788a1 1 0 01-2 0c0-.048-.006-.095-.02-.14a1 1 0 00-1.801-.468 1 1 0 00-.006 1.3c.176.213.393.4.64.55a2.002 2.002 0 011.132 1.77v.5a1 1 0 11-2 0v-.5a1.998 1.998 0 00-1.318-1.896 1 1 0 01-.271-1.29zM12 17h.01"
+            />
+          </svg>
+        </div>
+        <dd class="text-3xl font-semibold tracking-tight text-[var(--color-text-primary)] sm:text-5xl">
+          Políticas
+        </dd>
+        <dt class="text-base/7 text-[var(--color-text-blackandWhite)] px-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus accusamus, optio harum est inventore, quam quod et excepturi odit tenetur consequatur sunt. Deserunt, dicta quis sapiente optio tenetur minima accusantium.
+        </dt>
+      </div>
+    </dl>
+  </div>
 </div>

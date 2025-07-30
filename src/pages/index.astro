@@ -2,6 +2,7 @@
 import Navbar from '../components/Navbar.astro';
 import Carousel from '../components/Carousel.jsx';
 import CardsMisionVisionPolicies from '../components/MissionVisionPolicies.astro';
+import ProductCards from "../components/ProductCards.jsx";
 import "../styles/global.css";
 ---
 
@@ -18,6 +19,11 @@ import "../styles/global.css";
     <main class="pt-20"> {/* padding-top para no tapar contenido con navbar fixed */}
       <Carousel client:load /> {/* React se carga en cliente */}
 	        <CardsMisionVisionPolicies /> {/* Aquí se insertan las cards */}
+
+			<h3 class="text-center text-5xl text-[var(--color-text-blackandWhite)]">Nuestro Catalogo</h3>
+
+			<ProductCards client:load />
+
 
     </main>
 
