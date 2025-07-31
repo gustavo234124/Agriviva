@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar.astro';
 import Carousel from '../components/Carousel.jsx';
 import CardsMisionVisionPolicies from '../components/MissionVisionPolicies.astro';
 import ProductCards from "../components/ProductCards.jsx";
+import CardsServicios from "../components/CardsServicios.astro";
 import "../styles/global.css";
 ---
 
@@ -23,7 +24,8 @@ import "../styles/global.css";
 			<h3 class="text-center text-5xl text-[var(--color-text-blackandWhite)]">Nuestro Catalogo</h3>
 
 			<ProductCards client:load />
-
+ <!-- Aquí llamas el componente -->
+    <CardsServicios />
 
     </main>
 
