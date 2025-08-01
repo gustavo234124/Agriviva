@@ -12,9 +12,27 @@
     "@astrojs/react": "^4.3.0",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.5",
+    "canvas-confetti": "^1.9.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
     "embla-carousel-react": "^8.6.0",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.11"
-  }
+  },
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "tailwind.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavo234124/Agriviva.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavo234124/Agriviva/issues"
+  },
+  "homepage": "https://github.com/gustavo234124/Agriviva#readme"
 }

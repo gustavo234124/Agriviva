@@ -29,7 +29,7 @@ export default function CardsSection() {
 
   return (
     <>
-      <div className="w-full min-h-screen flex justify-center items-start bg-[var(--color-bg-body)] px-4 sm:px-6 pt-20">
+<div className="w-full flex justify-center items-start bg-[var(--color-bg-body)] px-4 sm:px-6 pt-20   mb-40">
         <div className="flex flex-col md:flex-row gap-10 md:gap-20 lg:gap-50 w-full max-w-5xl">
           {/* Card Asistencia Técnica */}
           <div className="w-full sm:w-full md:w-180 h-48 sm:h-72 md:h-120 bg-[var(--color-cards-products)] rounded-4xl shadow-lg flex flex-col items-center justify-center text-center p-6 mx-auto">

@@ -2,28 +2,35 @@ import React, { useState, useEffect } from "react";
 
 const styles = {
   wrapper: {
-    minHeight: "100vh",
+    minHeight: "50vh",
     background: "var(--color-bg-bod)",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
-    padding: "80px 20px",
+    justifyContent: "flex-start",  // CAMBIO AQUÍ
+    padding: "80px 20px ",
     position: "relative",
     overflowX: "hidden",
     fontFamily: "'Poppins', sans-serif",
+    marginBottom: "5%",  // <-- aquí el margin bottom
   },
-  title: {
-    fontSize: "5rem",
-    fontWeight: 800,
-    textTransform: "uppercase",
-    background: "linear-gradient(to right, #60a5fa, #e879f9, #f472b6)",
-    WebkitBackgroundClip: "text",
-    color: "transparent",
-    position: "absolute",
-    top: "40px",
-    textShadow: "0 0 30px rgba(96, 165, 250, 0.3)",
-  },
+title: {
+  fontSize: "4rem",
+  fontWeight: 800,
+  textTransform: "uppercase",
+  background: "var(--color-text-primary)",
+  WebkitBackgroundClip: "text",
+  backgroundClip: "text", // para navegadores compatibles
+  color: "transparent",
+  top: "40px",
+  textShadow: "0 0 30px rgba(96, 165, 250, 0.3)",
+  backgroundSize: "200% 100%",
+  animation: "shine 3s linear infinite",
+  marginBottom: "5%",  // <-- aquí el margin bottom
+},
+
+
+
   container: {
     width: "100%",
     maxWidth: "1400px",
