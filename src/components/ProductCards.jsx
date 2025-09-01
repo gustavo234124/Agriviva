@@ -861,7 +861,7 @@ y calibre en frutos y granos.`,
                             <img
                                 src={cards.find((card) => card.id === openModal)?.imageFileName}
                                 alt={`Imagen de ${cards.find((card) => card.id === openModal)?.title}`}
-                                className="w-50 h-60 sm:w-52 sm:h-52 md:w-64 md:h-100 object-contain mt-0 lg:mt-20"
+                                className="w-50 h-60 sm:w-52 sm:h-52 md:w-80 md:h-110 object-contain mt-0 lg:mt-10 lg:ml-5"
                             />
 
 
