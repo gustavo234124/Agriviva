@@ -1,18 +1,46 @@
 ---
 import Navbar from '../components/Navbar.astro';
+import Carousel from '../components/Carousel.jsx';
+import CardsMisionVisionPolicies from '../components/MissionVisionPolicies.astro';
+import ProductCards from "../components/ProductCards.jsx";
+import CardsServicios from "../components/CardsServicios.jsx";
+import TeamCarousel from "../components/TeamCarousel";
+import WhatsAppButton from "../components/WhatsAppButton.jsx"; // <--- IMPORTANTE
+import FooterContact from "../components/FooterContact.jsx";
 import "../styles/global.css";
 ---
 
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Fertilizantes - Landing</title>
+    <title>Agriviva</title>
+	<link rel="icon" href="/logo.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body class="bg-white">
+  <body class="bg-[var(--color-bg-body)] text-[var(--color-text-primary)] transition-colors duration-500 relative">
     <Navbar />
 
+    <main class="pt-20"> {/* padding-top para no tapar contenido con navbar fixed */}
+      <Carousel client:load /> {/* React se carga en cliente */}
+	        <CardsMisionVisionPolicies /> {/* Aquí se insertan las cards */}
+
+			<h3 class="text-center text-6xl text-[var(--color-text-primary)]">Nuestro Catalogo</h3>
+
+			<ProductCards client:load />
+
+			<h3 class="text-center text-6xl text-[var(--color-text-primary)]">Nuestros Servicios</h3>
+
+ <!-- Aquí llamas el componente -->
+    <CardsServicios client:load />
+
+      <TeamCarousel client:load />
+
+<FooterContact client:load />
 
 
+    </main>
+<!-- Botón flotante de WhatsApp -->
+<WhatsAppButton client:load />
     <style>
       :global(body) {
         margin: 0;

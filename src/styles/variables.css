@@ -1,5 +1,18 @@
 :root {
-  --color-text-primary: #2E7D32;   /* Color texto Verde principal */
-  --color-secondary: #15803d; /* Verde oscuro */
-  --color-accent: #facc15;    /* Amarillo */
+  --color-bg-body:#ffff;
+  --color-text-primary: #2E7D32;
+  --color-text-blackandWhite:#000000;
+  --color-cards-products:#D1D5DB;
+  --border-cards-products:#6e6f70;
+  --color-text-blue-primary:#0160AA; 
+}
+
+.dark {
+  --color-bg-body:#313030;
+  --color-text-primary: #a5d6a7;
+  --color-text-blackandWhite:#ffffff;
+  --color-cards-products:#626161;
+  --border-cards-products:#dadadb;
+  --color-text-blue-primary:#4da0df; 
+
 }
