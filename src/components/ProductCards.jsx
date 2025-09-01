@@ -12,7 +12,7 @@ export default function ProductCards() {
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#5eb853", pdfFileName: "alfa-desarrollo.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#5eb853", pdfFileName: "alfa-desarrollo.pdf", imageFileName: "/images/alfaDesarrollo.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "3%" },
                 { element: "Fósforo (P2O5)", value: "2%" },
@@ -55,7 +55,7 @@ export default function ProductCards() {
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#8c5b30", pdfFileName: "brote-fuerte.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#8c5b30", pdfFileName: "brote-fuerte.pdf", imageFileName: "/images/broteFuerte.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "5%" },
                 { element: "Fósforo (P2O5)", value: "3%" },
@@ -104,7 +104,7 @@ export default function ProductCards() {
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#74c272", pdfFileName: "verde-forte.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#74c272", pdfFileName: "verde-forte.pdf", imageFileName: "/images/verdeForte.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "5%" },
                 { element: "Fósforo (P2O5)", value: "3%" },
@@ -150,7 +150,7 @@ export default function ProductCards() {
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#ed4a26", pdfFileName: "optimus-vital", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#ed4a26", pdfFileName: "optimus-vital", imageFileName: "/images/optimusVital.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "5%" },
                 { element: "Fósforo (P2O5)", value: "3%" },
@@ -206,7 +206,7 @@ export default function ProductCards() {
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#d72023", pdfFileName: "presto-plus", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#d72023", pdfFileName: "presto-plus", imageFileName: "/images/prestoPlus.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "3%" },
                 { element: "Fósforo (P2O5)", value: "1%" },
@@ -272,7 +272,7 @@ granos. Además, induce respuestas adaptativas en la plata frente a factores bi�
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#2a76b6", pdfFileName: "brokel-k.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#2a76b6", pdfFileName: "brokel-k.pdf", imageFileName: "/images/brokelK.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "3%" },
                 { element: "Potasio (K2O)", value: "10%" },
@@ -330,7 +330,7 @@ sequía, salinidad, viento, altas y bajas temperaturas, entre otros.`,
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#abadae", pdfFileName: "fortasil.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#abadae", pdfFileName: "fortasil.pdf", imageFileName: "/images/fortrasil.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "5%" },
                 { element: "Calcio (Ca)", value: "5%" },
@@ -384,7 +384,7 @@ el daño causado por enfermedades, plagas y factores abióticos.`,
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#f0569b", pdfFileName: "impulso-floral.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#f0569b", pdfFileName: "impulso-floral.pdf", imageFileName: "/images/inpulsoFloral.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "1.5%" },
                 { element: "Fósforo (P2O5)", value: "3%" },
@@ -444,7 +444,7 @@ el daño causado por enfermedades, plagas y factores abióticos.`,
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#fece38", pdfFileName: "calibre-maximo.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#fece38", pdfFileName: "calibre-maximo.pdf", imageFileName: "/images/calibreMaximo.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "3%" },
                 { element: "Fósforo (P2O5)", value: "3%" },
@@ -501,7 +501,7 @@ incrementará el rendimiento y calidad de los frutos.`,
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#75c9ba", pdfFileName: "llenado-brix.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#75c9ba", pdfFileName: "llenado-brix.pdf", imageFileName: "/images/llenadoBrix.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "2%" },
                 { element: "Fósforo (P2O5)", value: "1%" },
@@ -553,7 +553,7 @@ y calibre en frutos y granos.`,
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#888857", pdfFileName: "meta-ideal.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#888857", pdfFileName: "meta-ideal.pdf", imageFileName: "/images/metaIdeal.png",
             ingredients: [
                 { element: "Nitrógeno (N)", value: "1%" },
                 { element: "Fósforo (P2O5)", value: "1%" },
@@ -603,7 +603,7 @@ y calibre en frutos y granos.`,
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#533318", pdfFileName: "booster-root.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#533318", pdfFileName: "booster-root.pdf", imageFileName: "/images/boosterRoot.png",
             ingredients: [
                 { element: "Fósforo (P2O5)", value: "15%" },
                 { element: "Calcio (CaO)", value: "10%" },
@@ -676,7 +676,7 @@ y calibre en frutos y granos.`,
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#fcb731", pdfFileName: "aero-polen.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#fcb731", pdfFileName: "aero-polen.pdf", imageFileName: "/images/aeroPolen.png",
             ingredients: [
                 { element: "Compuesto de aceite esencial de origen vegetal", value: "20.40%" },
                 { element: "Acido glutámico", value: "1%" },
