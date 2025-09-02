@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const images = [
-  "/public/images/CarouselItemUno.jpeg",
-  "/public/images/CarouselItemDos.jpeg",
-  "/public/images/CarouselItemTres.jpeg",
-  "/public/images/CarouselItemCutro.jpeg",
-  "/public/images/CarouselItemCinco.jpeg",
-  "/public/images/CarouselItemSeis.jpeg",
+  "/images/CarouselItemUno.jpeg",
+  "/images/CarouselItemDos.jpeg",
+  "/images/CarouselItemTres.jpeg",
+  "/images/CarouselItemCutro.jpeg",
+  "/images/CarouselItemCinco.jpeg",
+  "/images/CarouselItemSeis.jpeg",
 ];
 
 // SVG como componente para poder reutilizarlo y rotarlo

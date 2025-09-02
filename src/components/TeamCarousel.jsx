@@ -110,32 +110,32 @@ const teamMembers = [
   {
     name: "Emily Kim",
     role: "Founder",
-    img: "/public/images/item1.jpeg",
+    img: "/images/item1.jpeg",
   },
   {
     name: "Michael Steward",
     role: "Creative Director",
-    img: "/public/images/item2.jpeg",
+    img: "/images/item2.jpeg",
   },
   {
     name: "Emma Rodriguez",
     role: "Lead Developer",
-    img: "/public/images/item3.jpeg",
+    img: "/images/item3.jpeg",
   },
   {
     name: "Julia Gimmel",
     role: "UX Designer",
-    img: "/public/images/item4.jpeg",
+    img: "/images/item4.jpeg",
   },
   {
     name: "Lisa Anderson",
     role: "Marketing Manager",
-    img: "/public/images/item5.jpeg",
+    img: "/images/item5.jpeg",
   },
   {
     name: "James Wilson",
     role: "Product Manager",
-    img: "/public/images/item3.jpeg",
+    img: "/images/item3.jpeg",
   },
 ];
 
