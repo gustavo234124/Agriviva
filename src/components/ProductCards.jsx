@@ -732,6 +732,8 @@ y calibre en frutos y granos.`,
         },
     ];
 
+    const sortedCardsForDisplay = [...cards].sort((a, b) => a.title.localeCompare(b.title));
+
     const [selectedLiters, setSelectedLiters] = useState("1L");
 
     const [activeTab, setActiveTab] = useState("Información");
@@ -742,7 +744,7 @@ y calibre en frutos y granos.`,
             <div className="bg-[var(--color-bg-body)] py-24 sm:py-32">
                 <div className="mx-auto max-w-15xl px-6 lg:px-8">
                     <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-                        {cards.map(({ id, text, price, imageFileName, }) => (
+                        {sortedCardsForDisplay.map(({ id, text, price, imageFileName, }) => (
                             <div
                                 key={id}
                                 className="
