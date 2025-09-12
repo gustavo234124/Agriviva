@@ -650,7 +650,7 @@ y calibre en frutos y granos.`,
                 "5L": 150,
                 "10L": 300,
                 "20L": 600
-            }, modalContent: "...", headerColor: "#734fa0", pdfFileName: "control-bf.pdf", imageFileName: "/images/producto.png",
+            }, modalContent: "...", headerColor: "#734fa0", pdfFileName: "control-bf.pdf", imageFileName: "/images/fortrasil.png",
             ingredients: [
                 { element: "Elementos activos (K, Cu, Mn)", value: "12%" },
                 { element: "Diluyente", value: "88%" },
@@ -761,7 +761,8 @@ y calibre en frutos y granos.`,
                                 <img
                                     src={imageFileName}
                                     alt={`Imagen de ${text}`}
-                                    className="w-80 h-100 object-contain mb-2"
+                                    className="w-80 h-100 object-contain mb-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.85)]"
+
                                 />
 
 
@@ -858,7 +859,7 @@ y calibre en frutos y granos.`,
 
 
                         {/* Contenido del modal */}
-                        <div className="p-8 flex flex-col md:flex-row gap-8 items-center md:items-start">
+                        <div className=" flex flex-col md:flex-row items-center md:items-start">
                             {/* Imagen */}
                             <img
                                 src={cards.find((card) => card.id === openModal)?.imageFileName}
@@ -871,7 +872,7 @@ y calibre en frutos y granos.`,
 
 
                             {/* Detalles */}
-                            <div className="flex flex-col text-center md:text-left mt-4 md:mt-0 md:ml-20">
+                            <div className="flex flex-col text-center md:text-left mt-4 md:mt-0 md:mr-10">
                                 {/* Título */}
                                 <p className="text-3xl font-bold text-[var(--color-text-primary)]">
                                     Presentación
@@ -939,7 +940,7 @@ y calibre en frutos y granos.`,
                                         ))}
                                     </div>
 
-                                    <div className="mt-3 border border-gray-300 rounded-2xl p-4 text-gray-700 text-sm sm:text-base bg-white shadow-sm">
+                                    <div className="mt-3 border border-gray-300 rounded-2xl p-4 text-gray-700 text-sm sm:text-base bg-white shadow-sm mb-5">
                                         {activeTab === "Información" && (
                                             <p>{cards.find(c => c.id === openModal)?.info.informacion}</p>
                                         )}
