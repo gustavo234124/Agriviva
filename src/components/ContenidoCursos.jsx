@@ -13,11 +13,11 @@ const ContenidoCursos = () => {
       urlPdf: "/pdfs/curso-agricultura-sostenible.pdf",
       imagen: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&h=300&fit=crop",
       detalles: [
-        "Principios del muestreo representativo y calculo de peso por hectarea",
+        "Principios del muestreo representativo y calculo de peso por hectarea.",
         "Tipos de muestreo (aleatorio, dirigido, en zigzag y sistemático).",
-        "Evaluacion de propiedades fisicas: textuta, densidad aparente, color y estructura",
-        "Propiedades quimicas: pH, productividad electrica (C.E) capacidad de intercambio cationico (CIC), % de saturacion de bases y materia organica",
-        "Relacino suelo-fertilidad: diagnostico integral y limitantes quimicas",
+        "Evaluacion de propiedades fisicas: textuta, densidad aparente, color y estructura.",
+        "Propiedades quimicas: pH, productividad electrica (C.E) capacidad de intercambio cationico (CIC), % de saturacion de bases y materia organica.",
+        "Relacino suelo-fertilidad: diagnostico integral y limitantes quimicas.",
       ]
     },
     {
@@ -27,10 +27,10 @@ const ContenidoCursos = () => {
       imagen: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop",
       detalles: [
        "El analisis de suelo como herramienta de decision.",
-       "Conversion de resultados: ppm - kg/ha",
-       "Estimacion del suministro de nutrientes por el suelo",
-       "Evaluacion de la riquez nutrimental y capacidad de intercambio",
-       "Identificacion de limitantes nutricionales y balance cationico",
+       "Conversion de resultados: ppm - kg/ha.",
+       "Estimacion del suministro de nutrientes por el suelo.",
+       "Evaluacion de la riquez nutrimental y capacidad de intercambio.",
+       "Identificacion de limitantes nutricionales y balance cationico.",
       ]
     },
     {
@@ -39,12 +39,11 @@ const ContenidoCursos = () => {
       urlPdf: "/pdfs/curso-control-plagas.pdf",
       imagen: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=300&fit=crop",
       detalles: [
-        "Determinación de requerimientos por cultivo",
-        "Curvas de extracción nutrimental",
-        "Cálculo de demanda según etapa fenológica",
-        "Balance entre disponibilidad y necesidad",
-        "Factores de eficiencia de fertilizantes",
-        "Ajustes según tipo de suelo"
+       "Requerimientos nutricionales del cultivo de maiz (u otros).",
+       "Calculo de extraccion total de acuerdo con la meta de rendimiento.",
+       "Consideracion del factor de eficiencia de fertilizacion.",
+       "Dterminacion del aporte del suelo vs. requerimiento total.",
+       "Ejercicios de balance nutrimental practico.",
       ]
     },
     {
@@ -53,12 +52,11 @@ const ContenidoCursos = () => {
       urlPdf: "/pdfs/curso-fertilizacion-natural.pdf",
       imagen: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=400&h=300&fit=crop",
       detalles: [
-        "Conversión de unidades nutrimentales",
-        "Selección de fuentes de fertilizantes",
-        "Compatibilidad y mezclas físicas",
-        "Programación temporal de aplicaciones",
-        "Métodos de aplicación (suelo, foliar, fertirriego)",
-        "Consideraciones económicas y logísticas"
+       "Conversion de nutrieentes a fertilizante (materias primas).",
+       "Factores de conversion y riqueza de los fertilizantes.",
+       "Ejemplo de conversiones de N, P, K, Ca, Mg, S.",
+       "Distribucion de macronutrientes y micronutrientes.",
+       "Alternativas para mironutrientes y biofertilizantes de complementarios.",
       ]
     },
     {
@@ -67,12 +65,12 @@ const ContenidoCursos = () => {
       urlPdf: "/pdfs/curso-hidroponicos.pdf",
       imagen: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400&h=300&fit=crop",
       detalles: [
-        "Casos prácticos de cultivos comerciales",
-        "Ejercicios de cálculo completo",
-        "Ajustes según condiciones específicas",
-        "Monitoreo y correcciones durante ciclo",
-        "Evaluación de eficiencia del programa",
-        "Documentación y registro de aplicaciones"
+      "Elaboracion de mezclas de fisicas de fertilizantes",
+      "Calculos para el aporte de materia organica (M.O.) y su aporte de nitrogeno.",
+      "Ejercicios integrales de conversion, suministro, eficiencia, y formulacion.",
+      "Diseño del programa completo de fertilizacion por cultivo y meta productiva.",
+      "Evaluacion practica: interpretacion de analisis, conversion y formulacion total.",
+      "",
       ]
     }
   ];
@@ -94,6 +92,7 @@ const ContenidoCursos = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
+                    
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Nuestros Cursos
           </h1>
@@ -111,6 +110,7 @@ const ContenidoCursos = () => {
             >
               {/* Imagen */}
               <div className="relative h-48 overflow-hidden">
+                   
                 <img
                   src={curso.imagen}
                   alt={curso.titulo}
@@ -146,6 +146,10 @@ const ContenidoCursos = () => {
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row">
             {/* Lado Izquierdo - Imagen (40%) */}
             <div className="md:w-2/5 h-64 md:h-auto relative">
+                 <img
+                  src="/public/images/logocursos.png"
+                  alt=""
+                  class="w-30 h-20 md:w-40 md:h-30 object-cover absolute bg-white"                />
               <img
                 src={cursoSeleccionado.imagen}
                 alt={cursoSeleccionado.titulo}
