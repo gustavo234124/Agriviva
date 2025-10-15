@@ -94,9 +94,9 @@ export default function CardsSection() {
             {/* Frente */}
             <div className="flip-card-front bg-[var(--color-cards-products)] rounded-4xl shadow-lg flex flex-col items-center justify-center text-center p-6 transition">
               <img
-                src="/images/laboratorios.jpg"
+                src="/images/laboratorios.png"
                 alt="Imagen Laboratorios"
-                className="max-w-full max-h-40 sm:max-h-60 md:max-h-80 object-contain mb-2 pt-4 rounded-4xl"
+                className="max-w-full max-h-40 sm:max-h-60 md:max-h-80 h-90 w-100 object-contain mb-2 pt-4 rounded-4xl"
               />
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--color-text-primary)]">
                 Laboratorios
