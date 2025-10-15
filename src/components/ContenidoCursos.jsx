@@ -143,7 +143,7 @@ const ContenidoCursos = () => {
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row">
             <div className="w-full h-120 md:w-2/5 md:h-auto relative rounded-xl md:rounded-none overflow-hidden mx-auto md:mx-0 mt-4 md:mt-0">
                <img
-                src="/public/images/logocursos.png"
+                src="/images/logocursos.png"
                 alt=""
                 class="w-30 h-20 md:w-40 md:h-30 object-cover absolute bg-white"
               />
