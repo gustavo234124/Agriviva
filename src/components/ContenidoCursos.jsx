@@ -5,7 +5,6 @@ const ContenidoCursos = () => {
   const [modalAbierto, setModalAbierto] = useState(false);
   const [cursoSeleccionado, setCursoSeleccionado] = useState(null);
 
-  // Array de cursos con información
   const cursos = [
     {
       id: 1,
@@ -78,7 +77,7 @@ const ContenidoCursos = () => {
   const abrirModal = (curso) => {
     setCursoSeleccionado(curso);
     setModalAbierto(true);
-    document.body.style.overflow = 'hidden'; // Evita scroll del body
+    document.body.style.overflow = 'hidden'; 
   };
 
   const cerrarModal = () => {
@@ -101,7 +100,6 @@ const ContenidoCursos = () => {
           </p>
         </div>
 
-        {/* Grid de cursos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cursos.map((curso) => (
             <div
@@ -118,13 +116,11 @@ const ContenidoCursos = () => {
                 />
               </div>
 
-              {/* Contenido */}
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {curso.titulo}
                 </h3>
 
-                {/* Botones */}
                 <div className="flex gap-3 mt-auto">
                   <button
                     onClick={() => abrirModal(curso)}
@@ -144,7 +140,6 @@ const ContenidoCursos = () => {
       {modalAbierto && cursoSeleccionado && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md bg-white/30">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row">
-            {/* Lado Izquierdo - Imagen (40%) */}
             <div className="md:w-2/5 h-64 md:h-auto relative">
                  <img
                   src="/public/images/logocursos.png"
@@ -158,9 +153,7 @@ const ContenidoCursos = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
 
-            {/* Lado Derecho - Detalles (60%) */}
             <div className="md:w-3/5 p-8 overflow-y-auto flex flex-col">
-              {/* Botón cerrar */}
               <button
                 onClick={cerrarModal}
                 className="absolute top-4 right-4 bg-black rounded-full p-2 transition-colors shadow-lg"
@@ -168,12 +161,10 @@ const ContenidoCursos = () => {
                 <X className="w-6 h-6 text-white" />
               </button>
 
-              {/* Título */}
               <h2 className="text-3xl font-bold text-gray-900 mb-6 pr-10">
                 {cursoSeleccionado.titulo}
               </h2>
 
-              {/* Detalles del curso */}
               <div className="mb-8 flex-grow">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">
                   Contenido del Módulo:
@@ -188,7 +179,6 @@ const ContenidoCursos = () => {
                 </ul>
               </div>
 
-              {/* Botones de acción */}
               <div className="flex gap-4 pt-6 border-t border-gray-200">
                 <a
                   href={cursoSeleccionado.urlPdf}
