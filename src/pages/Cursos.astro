@@ -2,9 +2,6 @@
 import Navbar from '../components/Navbar.astro';
 import Carousel from '../components/Carousel.jsx';
 import CardsMisionVisionPolicies from '../components/MissionVisionPolicies.astro';
-import ProductCards from "../components/ProductCards.jsx";
-import CardsServicios from "../components/CardsServicios.jsx";
-import TeamCarousel from "../components/TeamCarousel";
 import WhatsAppButton from "../components/WhatsAppButton.jsx"; 
 import FooterContact from "../components/FooterContact.jsx";
 import "../styles/global.css";
@@ -21,27 +18,13 @@ import "../styles/global.css";
     <Navbar />
 
     <main class="pt-20"> 
-      <Carousel client:load /> 
-	       
+	       		
+    <h3 class="text-center text-6xl text-[var(--color-text-primary)]">Nuestro Cursos</h3>
+
       <div id="SectionQuienesSomos">
          <CardsMisionVisionPolicies />  
       </div>
 
-			<h3 class="text-center text-6xl text-[var(--color-text-primary)]">Nuestro Catalogo</h3>
-
-		<div id="SectionProducts">
-      	<ProductCards client:load />
-    </div>
-
-			<h3 class="text-center text-6xl text-[var(--color-text-primary)]">Nuestros Servicios</h3>
-
-    <div id="SectionCardsProducts">
-      <CardsServicios client:load />
-    </div>
-
-      <div id="SectionCarrucelFotos">
-        <TeamCarousel client:load />
-      </div>
 
 <div id="SectionContacto">
   <FooterContact client:load />
