@@ -68,7 +68,7 @@ export default function FooterContact() {
           ></iframe> */}
            <div className="bg-white w-full h-105 flex items-center justify-center rounded-3xl shadow-md">
     <img  
-      src="/images/logotipoagriviva.png" 
+      src="/images/logotipofooter.png" 
       alt="Logotipo Agriviva" 
       className="max-h-90 object-contain"
     />
@@ -78,7 +78,9 @@ export default function FooterContact() {
         {/* FORMULARIO */}
         <div className="flex-1 bg-white rounded-3xl p-6 md:p-10 flex flex-col justify-center gap-4 shadow-lg">
           <div>
-            
+            <h2 className="text-lg font-semibold text-gray-800">
+              
+            </h2>
 <p className="text-gray-700 mt-2 flex items-center gap-2">
   <svg
     xmlns="http://www.w3.org/2000/svg"
