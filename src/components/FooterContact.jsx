@@ -78,9 +78,7 @@ export default function FooterContact() {
         {/* FORMULARIO */}
         <div className="flex-1 bg-white rounded-3xl p-6 md:p-10 flex flex-col justify-center gap-4 shadow-lg">
           <div>
-            <h2 className="text-lg font-semibold text-gray-800">
-              Dirección: calle Venustiano Carranza N:32
-            </h2>
+            
 <p className="text-gray-700 mt-2 flex items-center gap-2">
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -154,14 +152,21 @@ export default function FooterContact() {
   </svg>
   agriviva.in@gmail.com
 </p>
-            <div className="flex gap-3 mt-3">
-              <a href="#" className="text-pink-500 hover:text-pink-700">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#" className="text-blue-500 hover:text-blue-700">
-                <i className="fab fa-facebook"></i>
-              </a>
-            </div>
+           
+<p className="text-gray-700 mt-2 flex items-center gap-2">
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="w-7 h-7 text-green-600"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12,0C7,0,3,4,3,9c0,6.2,3.4,11.7,8.5,14.9c0.3,0.2,0.7,0.2,1.1,0C17.6,20.6,21,15.2,21,9C21,4,17,0,12,0z M12,13 c-2.2,0-4-1.8-4-4c0-2.2,1.8-4,4-4s4,1.8,4,4C16,11.2,14.2,13,12,13z" />
+  </svg>
+  Tequila, Jalisco, México
+</p>
+
+
+           
           </div>
 
           {/* FORM */}
