@@ -1,99 +1,112 @@
 ---
 // Props opcionales para personalizar SEO por página
 interface Props {
-	title?: string;
-	description?: string;
-	image?: string;
+    title?: string;
+    description?: string;
+    image?: string;
+    // Opcional: una prop para añadir enlaces 'sameAs' específicos por página (como un perfil de autor)
+    // sameAs?: string[]; 
 }
 
 const {
-	title = "Agriviva - Soluciones para el Campo Mexicano",
-	description = "Agriviva ofrece soluciones innovadoras para la agricultura en México. Tecnología y servicios para el desarrollo del campo.",
-	image = "/og-image.jpg",
+    // 1. Title con keywords y marca al frente
+    title = "Agriviva | Fertilizantes y Nutrición Agrícola Innovadora en México",
+    // 1. Description con keywords principales (fertilizantes, alta eficiencia)
+    description = "Agriviva, empresa mexicana líder en fertilizantes de alta eficiencia. Ofrece soluciones de nutrición vegetal para el desarrollo del campo mexicano, con base en Jalisco.",
+    image = "/og-image.jpg",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageUrl = new URL(image, Astro.site);
+
+// Lista de enlaces 'sameAs' (redes sociales y Perfil de Google)
+const sameAsLinks = [
+    "https://www.facebook.com/share/1LY7cHEeX3/?mibextid=wwXIfr",
+    // **IMPORTANTE:** Agrega aquí el enlace directo a tu Perfil de Empresa de Google (GMB).
+    "https://business.google.com/dashboard/l/..." 
+];
 ---
 
 <!doctype html>
 <html lang="es-MX">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
 
-		<!-- SEO Básico -->
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<meta
-			name="keywords"
-			content="agricultura, agro, méxico, campo, tecnología agrícola, agriviva, puebla"
-		/>
-		<link rel="canonical" href={canonicalURL} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta
+            name="keywords"
+            content="Agriviva, Agriviva Innovation, fertilizantes, nutrición vegetal, soluciones agrícolas, agricultura mexicana, agro México, Tequila Jalisco, Jalisco"
+        />
+        <link rel="canonical" href={canonicalURL} />
+        
+        <link rel="alternate" hreflang="es-MX" href={canonicalURL} />
+        
 
-		<!-- Open Graph (Facebook, WhatsApp) -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:image" content={imageUrl} />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:locale" content="es_MX" />
-		<meta property="og:site_name" content="Agriviva" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:site_name" content="Agriviva" />
 
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={imageUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={imageUrl} />
 
-		<!-- Robots -->
-		<meta name="robots" content="index, follow" />
-		<meta
-			name="googlebot"
-			content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
-		/>
+        <meta name="robots" content="index, follow" />
+        <meta
+            name="googlebot"
+            content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+        />
 
-		<!-- JSON-LD Schema -->
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Organization",
-				"name": "Agriviva",
-				"url": "https://agriviva.com.mx",
-				"logo": "https://agriviva.com.mx/logo.png",
-				"description": "Soluciones innovadoras para la agricultura en México",
-				"address": {
-					"@type": "PostalAddress",
-					"addressLocality": "Tequila",
-					"addressRegion": "Jalisco",
-					"addressCountry": "MX"
-				},
-				"contactPoint": {
-					"@type": "ContactPoint",
-					"telephone": "+523741821415",
-					"contactType": "Customer Service",
-					"availableLanguage": "Spanish"
-				},
-				"sameAs": [
-					"https://www.facebook.com/share/1LY7cHEeX3/?mibextid=wwXIfr",
-				]
-			}
-		</script>
-	</head>
-	<body>
-		<slot />
-	</body>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Agriviva",
+                "url": "https://agriviva.com.mx",
+                "logo": "https://agriviva.com.mx/logo.png",
+                // Descripción rica en keywords y ubicación
+                "description": "Fertilizantes y soluciones de nutrición vegetal de alta eficiencia. Líderes en la innovación para el campo mexicano con sede en Jalisco.",
+                
+                // Ubicación de la base de operaciones (sin dirección física)
+                "location": { 
+                  "@type": "Place",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressRegion": "Jalisco",
+                    "addressCountry": "MX"
+                  }
+                },
+                "areaServed": "MX", 
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+523741821415",
+                    "contactType": "Customer Service",
+                    "availableLanguage": "Spanish"
+                },
+                "sameAs": ${JSON.stringify(sameAsLinks)}
+            }
+        </script>
+    </head>
+    <body>
+        <slot />
+    </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>
