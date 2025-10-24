@@ -75,7 +75,6 @@ export default function FooterContact() {
   </div>
         </div>
 
-        {/* FORMULARIO */}
         <div className="flex-1 bg-white rounded-3xl p-6 md:p-10 flex flex-col justify-center gap-4 shadow-lg">
           <div>
             <h2 className="text-lg font-semibold text-gray-800">
@@ -171,7 +170,6 @@ export default function FooterContact() {
            
           </div>
 
-          {/* FORM */}
           <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
             <div className="flex flex-col sm:flex-row gap-3">
              <input
@@ -207,7 +205,6 @@ export default function FooterContact() {
             </button>
           </form>
 
-          {/* Mensaje enviado */}
           {mensajeEnviado && (
             <p className="mt-3 text-green-700 font-semibold text-center">
               ¡Mensaje enviado con éxito! 🎉
