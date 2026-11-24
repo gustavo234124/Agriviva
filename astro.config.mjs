@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://agriviva.com.mx',
+  site: 'https://www.agriviva.com.mx',
   
   vite: {
     plugins: [tailwindcss()],

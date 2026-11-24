@@ -13,7 +13,7 @@ const {
     image = "/images/logotipoagriviva.png",
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL("https://agriviva.com.mx");
+const siteUrl = Astro.site ?? new URL("https://www.agriviva.com.mx");
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 const imageUrl = new URL(image, siteUrl);
 const logoUrl = new URL("/images/logotipoagriviva.png", siteUrl);

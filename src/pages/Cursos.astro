@@ -1,39 +1,25 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import WhatsAppButton from "../components/WhatsAppButton.jsx"; 
+import Navbar from "../components/Navbar.astro";
+import WhatsAppButton from "../components/WhatsAppButton.jsx";
 import FooterContact from "../components/FooterContact.jsx";
 import ContenidoCursos from "../components/ContenidoCursos.jsx";
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Agriviva</title>
-	<link rel="icon" href="/logo.ico" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body class="bg-[var(--color-bg-body)] text-[var(--color-text-primary)] transition-colors duration-500 relative">
-    <Navbar />
+<Layout
+  title="Nuestros Cursos | Agriviva"
+  description="Conoce los cursos de capacitación agrícola de Agriviva sobre caracterización de suelo, diagnóstico nutrimental y manejo agronómico."
+>
+  <Navbar />
 
-    <main class="pt-20"> 
+  <main class="pt-20">
+    <div id="SectionQuienesSomos">
+      <ContenidoCursos client:only="react" />
+    </div>
 
-      <div id="SectionQuienesSomos">
-<ContenidoCursos client:only="react" />
-      </div>
-
-
-<div id="SectionContacto">
-  <FooterContact client:load />
-</div>
-
-    </main>
-<WhatsAppButton client:load />
-    <style>
-      :global(body) {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </body>
-</html>
+    <div id="SectionContacto">
+      <FooterContact client:load />
+    </div>
+  </main>
+  <WhatsAppButton client:load />
+</Layout>
