@@ -1,38 +1,60 @@
 ---
-// Props opcionales para personalizar SEO por página
+import "../styles/global.css";
+
 interface Props {
     title?: string;
     description?: string;
     image?: string;
-    // Opcional: una prop para añadir enlaces 'sameAs' específicos por página (como un perfil de autor)
-    // sameAs?: string[]; 
 }
 
 const {
-    // 1. Title con keywords y marca al frente
     title = "Agriviva | Fertilizantes y Nutrición Agrícola Innovadora en México",
-    // 1. Description con keywords principales (fertilizantes, alta eficiencia)
     description = "Agriviva, empresa mexicana líder en fertilizantes de alta eficiencia. Ofrece soluciones de nutrición vegetal para el desarrollo del campo mexicano, con base en Jalisco.",
-    image = "/og-image.jpg",
+    image = "/images/logotipoagriviva.png",
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const imageUrl = new URL(image, Astro.site);
+const siteUrl = Astro.site ?? new URL("https://agriviva.com.mx");
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const imageUrl = new URL(image, siteUrl);
+const logoUrl = new URL("/images/logotipoagriviva.png", siteUrl);
 
-// Lista de enlaces 'sameAs' (redes sociales y Perfil de Google)
 const sameAsLinks = [
     "https://www.facebook.com/share/1LY7cHEeX3/?mibextid=wwXIfr",
-    // **IMPORTANTE:** Agrega aquí el enlace directo a tu Perfil de Empresa de Google (GMB).
-    "https://business.google.com/dashboard/l/..." 
+    // Agrega aquí el enlace real a tu Perfil de Empresa de Google cuando lo tengas.
 ];
+
+const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Agriviva",
+    url: siteUrl.origin,
+    logo: logoUrl.toString(),
+    description:
+        "Fertilizantes y soluciones de nutrición vegetal de alta eficiencia. Líderes en la innovación para el campo mexicano con sede en Jalisco.",
+    location: {
+        "@type": "Place",
+        address: {
+            "@type": "PostalAddress",
+            addressRegion: "Jalisco",
+            addressCountry: "MX",
+        },
+    },
+    areaServed: "MX",
+    contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+523741821415",
+        contactType: "Customer Service",
+        availableLanguage: "Spanish",
+    },
+    sameAs: sameAsLinks,
+};
 ---
 
 <!doctype html>
 <html lang="es-MX">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
 
         <title>{title}</title>
@@ -42,17 +64,21 @@ const sameAsLinks = [
             content="Agriviva, Agriviva Innovation, fertilizantes, nutrición vegetal, soluciones agrícolas, agricultura mexicana, agro México, Tequila Jalisco, Jalisco"
         />
         <link rel="canonical" href={canonicalURL} />
-        
         <link rel="alternate" hreflang="es-MX" href={canonicalURL} />
-        
+
+        <link rel="icon" href="/logo.ico" sizes="any" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="/favicon-96x96.png"
+        />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalURL} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={imageUrl} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="es_MX" />
         <meta property="og:site_name" content="Agriviva" />
 
@@ -67,37 +93,12 @@ const sameAsLinks = [
             content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
         />
 
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "Agriviva",
-                "url": "https://agriviva.com.mx",
-                "logo": "https://agriviva.com.mx/logo.png",
-                // Descripción rica en keywords y ubicación
-                "description": "Fertilizantes y soluciones de nutrición vegetal de alta eficiencia. Líderes en la innovación para el campo mexicano con sede en Jalisco.",
-                
-                // Ubicación de la base de operaciones (sin dirección física)
-                "location": { 
-                  "@type": "Place",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressRegion": "Jalisco",
-                    "addressCountry": "MX"
-                  }
-                },
-                "areaServed": "MX", 
-                "contactPoint": {
-                    "@type": "ContactPoint",
-                    "telephone": "+523741821415",
-                    "contactType": "Customer Service",
-                    "availableLanguage": "Spanish"
-                },
-                "sameAs": ${JSON.stringify(sameAsLinks)}
-            }
-        </script>
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(organizationSchema)}
+        />
     </head>
-    <body>
+    <body class="bg-[var(--color-bg-body)] text-[var(--color-text-primary)] transition-colors duration-500 relative">
         <slot />
     </body>
 </html>
@@ -106,7 +107,8 @@ const sameAsLinks = [
     html,
     body {
         margin: 0;
+        padding: 0;
         width: 100%;
-        height: 100%;
+        min-height: 100%;
     }
 </style>

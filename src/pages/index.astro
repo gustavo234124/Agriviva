@@ -1,61 +1,50 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import Carousel from '../components/Carousel.jsx';
-import CardsMisionVisionPolicies from '../components/MissionVisionPolicies.astro';
+import Navbar from "../components/Navbar.astro";
+import Carousel from "../components/Carousel.jsx";
+import CardsMisionVisionPolicies from "../components/MissionVisionPolicies.astro";
 import ProductCards from "../components/ProductCards.jsx";
 import CardsServicios from "../components/CardsServicios.jsx";
 import TeamCarousel from "../components/TeamCarousel";
-import WhatsAppButton from "../components/WhatsAppButton.jsx"; 
+import WhatsAppButton from "../components/WhatsAppButton.jsx";
 import FooterContact from "../components/FooterContact.jsx";
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Agriviva</title>
-	<link rel="icon" href="/logo.ico" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body class="bg-[var(--color-bg-body)] text-[var(--color-text-primary)] transition-colors duration-500 relative">
-    <Navbar />
+<Layout>
+  <Navbar />
 
-    <main class="pt-20"> 
-      <Carousel client:load /> 
-	       <h1 style="position: absolute; left: -9999px;">
-  Agriviva: Fertilizantes y Soluciones de Nutrición Agrícola en México
-</h1>
-      <div id="SectionQuienesSomos">
-         <CardsMisionVisionPolicies />  
-      </div>
-
-			<h3 class="text-center text-6xl text-[var(--color-text-primary)]">Nuestro Catálogo</h3>
-
-		<div id="SectionProducts">
-      	<ProductCards client:load />
+  <main class="pt-20">
+    <Carousel client:load />
+    <h1 style="position: absolute; left: -9999px;">
+      Agriviva: Fertilizantes y Soluciones de Nutrición Agrícola en México
+    </h1>
+    <div id="SectionQuienesSomos">
+      <CardsMisionVisionPolicies />
     </div>
 
-			<h3 class="text-center text-6xl text-[var(--color-text-primary)]">Nuestros Servicios</h3>
+    <h3 class="text-center text-6xl text-[var(--color-text-primary)]">
+      Nuestro Catálogo
+    </h3>
+
+    <div id="SectionProducts">
+      <ProductCards client:load />
+    </div>
+
+    <h3 class="text-center text-6xl text-[var(--color-text-primary)]">
+      Nuestros Servicios
+    </h3>
 
     <div id="SectionCardsProducts">
       <CardsServicios client:load />
     </div>
 
-      <div id="SectionCarrucelFotos">
-        <TeamCarousel client:load />
-      </div>
+    <div id="SectionCarrucelFotos">
+      <TeamCarousel client:load />
+    </div>
 
-<div id="SectionContacto">
-  <FooterContact client:load />
-</div>
-
-    </main>
-<WhatsAppButton client:load />
-    <style>
-      :global(body) {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </body>
-</html>
+    <div id="SectionContacto">
+      <FooterContact client:load />
+    </div>
+  </main>
+  <WhatsAppButton client:load />
+</Layout>
